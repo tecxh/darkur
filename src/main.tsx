@@ -1,12 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
 import { HeartIcon } from '@phosphor-icons/react'
+import { DarkurProvider } from './DarkurProvider/DarkurProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <p className="text-xl text-black">hello</p>
-    <HeartIcon />
+    <DarkurProvider>
+      <p className="text-xl text-gray-600">hello</p>
+      <HeartIcon />
+    </DarkurProvider>
   </StrictMode>,
 )
