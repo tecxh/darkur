@@ -7,6 +7,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <DarkurProvider>
       <p className="text-xl text-gray-600">hello</p>
+      <button className="bg-sky-500  p-100">hello</button>
       <HeartIcon />
     </DarkurProvider>
   </StrictMode>,
