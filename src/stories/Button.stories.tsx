@@ -13,7 +13,7 @@ const Button = ({ variant = 'default', label = '' }: ButtonProps) => {
   const variantMap: VariantMap = {
     primary: `text-white  hover:bg-sky-600 bg-sky-700`,
     secondary: `text-white  hover:bg-fuchsia-600 bg-fuchsia-700`,
-    default: `text-black  hover:bg-slate-200 bg-slate-300`
+    default: `text-black  hover:bg-slate-300 bg-slate-400`
   }
 
   return (
