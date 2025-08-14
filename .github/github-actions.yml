@@ -1,0 +1,10 @@
+name: Darkur Actions
+on: [push]
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: npx chromatic --project-token "$CHROMATIC_PROJECT_TOKEN"
