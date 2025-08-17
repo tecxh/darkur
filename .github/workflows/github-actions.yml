@@ -4,6 +4,8 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - shell: bash
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
