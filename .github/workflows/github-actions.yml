@@ -1,5 +1,9 @@
-name: Darkur Actions
-on: [push]
+name: Deploy Storybook
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 jobs:
   deploy-storybook:
     name: Chromatic Deploy
