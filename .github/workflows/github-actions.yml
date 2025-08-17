@@ -2,13 +2,20 @@ name: Darkur Actions
 on: [push]
 jobs:
   deploy-storybook:
+    name: Chromatic Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout 
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - shell: bash
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        run: npx chromatic --project-token "$CHROMATIC_PROJECT_TOKEN"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.0
+      - name: Install Deps
+        run: npm ci
+      - name: Deploy Chromatic
+        uses: chromaui/actions@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      
