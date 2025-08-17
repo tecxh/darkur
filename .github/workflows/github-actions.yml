@@ -15,7 +15,7 @@ jobs:
       - name: Install Deps
         run: npm ci
       - name: Deploy Chromatic
-        uses: chromaui/actions@latest
+        uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       
